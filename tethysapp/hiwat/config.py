@@ -37,3 +37,4 @@ HIWAT_DAY2 = '/home/suman/sldas2/hiwat/2020033112/hkhEnsemble_202003311200_day2_
 ROOT_OUTPUT_DIR = '/media/sf_Downloads/hiwat_data/'
 
 COLORS_PICKLE = '/media/sf_Downloads/wrf_hkh_nc/gradscolors.pkl'
+

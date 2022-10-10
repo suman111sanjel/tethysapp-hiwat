@@ -616,9 +616,9 @@ myApp.BindControls = function () {
     $('#OpentsCurve').click(function () {
         $('#ChartModel').modal('show');
     });
-    $('#select_country_for_dri').change(function () {
-        myApp.changeCountryForDistrictExtent();
-    });
+    // $('#select_country_for_dri').change(function () {
+    //     myApp.changeCountryForDistrictExtent();
+    // });
     $('#select_district_of_country').change(function () {
         let curval = $(this).val();
         let selAr = districtExtentData.filter(function (x) {
@@ -896,24 +896,24 @@ myApp.geocoding = function () {
     });
 };
 
-myApp.populateDistrict = function () {
-    let strHTML = '';
-    for (let i of districtExtentData) {
-        strHTML = strHTML + `<option value="${i[2]}" country="${i[0]}">${i[2]}</option>`
-    }
-    $('#select_district_of_country').html(strHTML);
-    myApp.changeCountryForDistrictExtent();
-};
+// myApp.populateDistrict = function () {
+//     let strHTML = '';
+//     for (let i of districtExtentData) {
+//         strHTML = strHTML + `<option value="${i[2]}" country="${i[0]}">${i[2]}</option>`
+//     }
+//     $('#select_district_of_country').html(strHTML);
+//     myApp.changeCountryForDistrictExtent();
+// };
 
-myApp.changeCountryForDistrictExtent = function () {
-    let curCountry = $('#select_country_for_dri').val();
-    $(`#select_district_of_country option:not([country='${curCountry}'])`).hide();
-    $(`#select_district_of_country option[country='${curCountry}']`).show();
-    let selectData = districtExtentData.filter(function (x) {
-        return x[0] === curCountry
-    })[0];
-    $(`#select_district_of_country`).val(selectData[2]);
-};
+// myApp.changeCountryForDistrictExtent = function () {
+//     let curCountry = $('#select_country_for_dri').val();
+//     $(`#select_district_of_country option:not([country='${curCountry}'])`).hide();
+//     $(`#select_district_of_country option[country='${curCountry}']`).show();
+//     let selectData = districtExtentData.filter(function (x) {
+//         return x[0] === curCountry
+//     })[0];
+//     $(`#select_district_of_country`).val(selectData[2]);
+// };
 
 myApp.init = async function () {
     myApp.myMap();
@@ -922,7 +922,7 @@ myApp.init = async function () {
     await myApp.populateVariables();
     myApp.InitialConfiguration();
     myApp.geocoding();
-    myApp.populateDistrict()
+    // myApp.populateDistrict()
 }
 
 //WMS and Has control Layer
